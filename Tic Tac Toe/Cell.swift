@@ -22,7 +22,9 @@ struct Cell
             case Tile.Dot:
                 return "O"
             default:
-                return ""
+                // returning "Y" in place of "" so printed text is comparable in size
+                // prevents tile resizing when going from empty to "X" or "O"
+                return "Y"
         }
 
     }
@@ -36,7 +38,7 @@ struct Cell
             case Tile.Dot:
                 return Color.pink
             default:
-                return Color.white
+                return Color(UIColor.systemGray6)
         }
         
     }
